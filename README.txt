@@ -53,6 +53,10 @@ Setup
 git clone https://github.com/donitgashi/HabitTracker_Project.git
 cd HabitTracker_Project
 
+1a) Optional
+
+Download the zip file and extract the code and open in a IDE (pycharm) or something similar that can run python.
+
 2) Create and activate a virtual environment (recommended)
 
 Windows (PowerShell)
