@@ -1,4 +1,4 @@
-# Habit Tracker Application (OOFPP Final Phase)
+# Habit Tracker Application 
 
 A command-line habit tracker written in Python with SQLite persistence.
 It supports authentication, daily/weekly habits, completion tracking with date+time, streak calculations that respect habit periodicity, and a pure analytics module.
