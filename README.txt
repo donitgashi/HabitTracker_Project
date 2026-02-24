@@ -1,4 +1,4 @@
-# Habit Tracker Application (OOFPP Final Phase)
+# Habit Tracker Application 
 
 A command-line habit tracker written in Python with SQLite persistence.
 It supports authentication, daily/weekly habits, completion tracking with date+time, streak calculations that respect habit periodicity, and a pure analytics module.
@@ -7,7 +7,7 @@ It supports authentication, daily/weekly habits, completion tracking with date+t
 
 This repository includes:
 - Modular project structure (`habit_tracker/`, `tests/`)
-- README + `.gitignore`
+- README
 - Unit tests for CRUD and analytics functions
 - 4 weeks of predefined demo habit data (`seed_demo.py`) used in tests
 - Screenshots of functionality and unit-test results (see `screenshots/`)
@@ -98,4 +98,5 @@ python -m pytest -q
 ## Screenshots / Evidence
 
 The screenshot are in the folder screenshots.
-In there you will find the first flow, analytics output, seed demo summary, pytest results and bit more in details information what was tested.
+In there you will find the first flow, analytics output, seed demo summary, 
+pytest results and bit more in details information what was tested.
