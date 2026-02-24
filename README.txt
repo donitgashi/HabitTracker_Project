@@ -98,4 +98,5 @@ python -m pytest -q
 ## Screenshots / Evidence
 
 The screenshot are in the folder screenshots.
-In there you will find the first flow, analytics output, seed demo summary, pytest results and bit more in details information what was tested.
+In there you will find the first flow, analytics output, seed demo summary, 
+pytest results and bit more in details information what was tested.
