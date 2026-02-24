@@ -1,102 +1,134 @@
-# Habit Tracker Application 
+Habit Tracker Application
 
-A command-line habit tracker written in Python with SQLite persistence.
-It supports authentication, daily/weekly habits, completion tracking with date+time, streak calculations that respect habit periodicity, and a pure analytics module.
+A modular command-line Habit Tracker built with Python and SQLite.
 
-## Final-phase checklist coverage
+The application allows users to create and manage habits, record completions, and analyze progress over time. 
+It supports daily and weekly habits and calculates streaks based on the habit’s periodicity.
 
-This repository includes:
-- Modular project structure (`habit_tracker/`, `tests/`)
-- README
-- Unit tests for CRUD and analytics functions
-- 4 weeks of predefined demo habit data (`seed_demo.py`) used in tests
-- Screenshots of functionality and unit-test results (see `screenshots/`)
-- Basic comments/docstrings in code
+--------------------------------------------------
+Main Features
+--------------------------------------------------
 
-## Features
+- User registration and login
+- Create, edit, and delete habits
+- Mark habits as completed
+- Support for daily and weekly habits
+- Periodicity-aware streak calculations
+- Analytics module for habit performance
+- Predefined demo data (4 weeks) for testing and verification
+- Unit tests for CRUD and analytics functionality
 
-- User registration and login (bcrypt)
-- Create / edit / delete habits
-- Daily and weekly periodicity
-- Completion logging with timezone-aware timestamps
-- Streak calculation based on consecutive periods (daily or weekly)
-- Analytics:
-  - list all habits
-  - list titles
-  - group habits by periodicity
-  - filter habits by periodicity
-  - longest streak overall
-  - longest streak for a selected habit
-- Demo dataset (5 habits + 4 weeks tracking data)
+--------------------------------------------------
+Project Structure
+--------------------------------------------------
 
-## Project structure
+HabitTracker_Project/
+├── habit_tracker/
+│   ├── db.py
+│   ├── habit_manager.py
+│   ├── analytics.py
+│   ├── seed_demo.py
+│   ├── main.py
+│   └── __main__.py
+├── tests/
+├── screenshots/
+├── requirements.txt
+├── .gitignore
+└── README.txt
 
-- `habit_tracker/db.py` → database access and SQL
-- `habit_tracker/habit_manager.py` → business logic (CRUD, completions, streaks)
-- `habit_tracker/analytics.py` → pure analytics functions
-- `habit_tracker/seed_demo.py` → loads demo user + 5 habits + 4 weeks of data
-- `habit_tracker/main.py` → CLI interface
-- `tests/` → unit and integration tests
-- `screenshots/` → evidence from functionality and tests
+--------------------------------------------------
+Technologies
+--------------------------------------------------
 
-## Setup
+- Python
+- SQLite
+- pytest
 
-### Prerequisites
-- Python 3.7+ (recommended: latest Python 3)
-- pip
+--------------------------------------------------
+Setup
+--------------------------------------------------
 
-```bash
+1) Clone the repository
+
+git clone https://github.com/donitgashi/HabitTracker_Project.git
+cd HabitTracker_Project
+
+2) Create and activate a virtual environment (recommended)
+
+Windows (PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+macOS / Linux
 python3 -m venv .venv
-source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+source .venv/bin/activate
+
+3) Install dependencies
+
 python -m pip install -r requirements.txt
-```
 
-## Run the app
+--------------------------------------------------
+Run the Application
+--------------------------------------------------
 
-```bash
 python -m habit_tracker
-```
 
-The database file defaults to `habit_tracker.db` in the current directory.
-You can override the path with an environment variable:
+--------------------------------------------------
+Load Demo Data (5 habits + 4 weeks)
+--------------------------------------------------
 
-```bash
-export HABIT_DB_PATH=/path/to/my.db
-# Windows PowerShell: $env:HABIT_DB_PATH="C:\path\to\my.db"
-```
-
-## Load predefined demo data (5 habits + 4 weeks)
-
-```bash
 python -m habit_tracker.seed_demo
-```
 
-Login credentials:
-- username: `demo`
-- password: `demo`
+Demo login:
+- Username: demo
+- Password: demo
 
-## Streak rules (periodicity-aware)
+--------------------------------------------------
+Streak Logic 
+--------------------------------------------------
 
-A streak is the number of consecutive periods where the habit was completed at least once.
+Daily habits
+- Streak increases only for consecutive days
+- Multiple completions on the same day count once
+- Missing a day resets the streak
 
-### Daily habits
-- period = calendar day
-- multiple completions on the same day do not increase streak
-- missing a day resets the streak
+Weekly habits
+- Streak increases only for consecutive weeks
+- Multiple completions in the same week count once
+- Missing a week resets the streak
 
-### Weekly habits
-- period = ISO week (year + week number)
-- multiple completions in the same week do not increase streak
-- missing a week resets the streak
+--------------------------------------------------
+Run Tests
+--------------------------------------------------
 
-## Run tests
+python -m pytest -v
 
-```bash
-python -m pytest -q
-```
+If pytest is not installed:
+pip install pytest
 
-## Screenshots / Evidence
+--------------------------------------------------
+Test Coverage
+--------------------------------------------------
 
-The screenshot are in the folder screenshots.
-In there you will find the first flow, analytics output, seed demo summary, 
-pytest results and bit more in details information what was tested.
+The test suite includes:
+- Habit creation
+- Habit editing
+- Habit deletion
+- Analytics functions
+- Daily and weekly streak calculations
+- Verification using predefined 4-week time-series data
+
+--------------------------------------------------
+Screenshots / Evidence
+--------------------------------------------------
+
+The screenshots/ folder contains:
+- application functionality screenshots
+- analytics output screenshots
+- unit test (pytest) result screenshots
+--------------------------------------------------
+Author
+--------------------------------------------------
+
+Donit Gashi
+
