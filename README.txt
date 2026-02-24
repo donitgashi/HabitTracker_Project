@@ -7,7 +7,7 @@ It supports authentication, daily/weekly habits, completion tracking with date+t
 
 This repository includes:
 - Modular project structure (`habit_tracker/`, `tests/`)
-- README + `.gitignore`
+- README
 - Unit tests for CRUD and analytics functions
 - 4 weeks of predefined demo habit data (`seed_demo.py`) used in tests
 - Screenshots of functionality and unit-test results (see `screenshots/`)
