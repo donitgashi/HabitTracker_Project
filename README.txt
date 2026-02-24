@@ -130,9 +130,4 @@ The screenshots/ folder contains:
 - application functionality screenshots
 - analytics output screenshots
 - unit test (pytest) result screenshots
---------------------------------------------------
-Author
---------------------------------------------------
-
-Donit Gashi
 
